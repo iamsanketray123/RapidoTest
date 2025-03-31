@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		19FAEA932D9A7EFA002B4CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19FAEA742D9A7EF6002B4CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19FAEA7B2D9A7EF6002B4CDA;
+			remoteInfo = RapidoMapsTest;
+		};
+		19FAEA9D2D9A7EFA002B4CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19FAEA742D9A7EF6002B4CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19FAEA7B2D9A7EF6002B4CDA;
+			remoteInfo = RapidoMapsTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19FAEA7C2D9A7EF6002B4CDA /* RapidoMapsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapidoMapsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FAEA922D9A7EFA002B4CDA /* RapidoMapsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapidoMapsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FAEA9C2D9A7EFA002B4CDA /* RapidoMapsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapidoMapsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		19FAEAA42D9A7EFA002B4CDA /* Exceptions for "RapidoMapsTest" folder in "RapidoMapsTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 19FAEA7B2D9A7EF6002B4CDA /* RapidoMapsTest */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		19FAEA7E2D9A7EF6002B4CDA /* RapidoMapsTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				19FAEAA42D9A7EFA002B4CDA /* Exceptions for "RapidoMapsTest" folder in "RapidoMapsTest" target */,
+			);
+			path = RapidoMapsTest;
+			sourceTree = "<group>";
+		};
+		19FAEA952D9A7EFA002B4CDA /* RapidoMapsTestTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RapidoMapsTestTests;
+			sourceTree = "<group>";
+		};
+		19FAEA9F2D9A7EFA002B4CDA /* RapidoMapsTestUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RapidoMapsTestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19FAEA792D9A7EF6002B4CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA8F2D9A7EFA002B4CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA992D9A7EFA002B4CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19FAEA732D9A7EF6002B4CDA = {
+			isa = PBXGroup;
+			children = (
+				19FAEA7E2D9A7EF6002B4CDA /* RapidoMapsTest */,
+				19FAEA952D9A7EFA002B4CDA /* RapidoMapsTestTests */,
+				19FAEA9F2D9A7EFA002B4CDA /* RapidoMapsTestUITests */,
+				19FAEA7D2D9A7EF6002B4CDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19FAEA7D2D9A7EF6002B4CDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19FAEA7C2D9A7EF6002B4CDA /* RapidoMapsTest.app */,
+				19FAEA922D9A7EFA002B4CDA /* RapidoMapsTestTests.xctest */,
+				19FAEA9C2D9A7EFA002B4CDA /* RapidoMapsTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19FAEA7B2D9A7EF6002B4CDA /* RapidoMapsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19FAEAA52D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTest" */;
+			buildPhases = (
+				19FAEA782D9A7EF6002B4CDA /* Sources */,
+				19FAEA792D9A7EF6002B4CDA /* Frameworks */,
+				19FAEA7A2D9A7EF6002B4CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				19FAEA7E2D9A7EF6002B4CDA /* RapidoMapsTest */,
+			);
+			name = RapidoMapsTest;
+			packageProductDependencies = (
+			);
+			productName = RapidoMapsTest;
+			productReference = 19FAEA7C2D9A7EF6002B4CDA /* RapidoMapsTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19FAEA912D9A7EFA002B4CDA /* RapidoMapsTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19FAEAAA2D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTestTests" */;
+			buildPhases = (
+				19FAEA8E2D9A7EFA002B4CDA /* Sources */,
+				19FAEA8F2D9A7EFA002B4CDA /* Frameworks */,
+				19FAEA902D9A7EFA002B4CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19FAEA942D9A7EFA002B4CDA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				19FAEA952D9A7EFA002B4CDA /* RapidoMapsTestTests */,
+			);
+			name = RapidoMapsTestTests;
+			packageProductDependencies = (
+			);
+			productName = RapidoMapsTestTests;
+			productReference = 19FAEA922D9A7EFA002B4CDA /* RapidoMapsTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19FAEA9B2D9A7EFA002B4CDA /* RapidoMapsTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19FAEAAD2D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTestUITests" */;
+			buildPhases = (
+				19FAEA982D9A7EFA002B4CDA /* Sources */,
+				19FAEA992D9A7EFA002B4CDA /* Frameworks */,
+				19FAEA9A2D9A7EFA002B4CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19FAEA9E2D9A7EFA002B4CDA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				19FAEA9F2D9A7EFA002B4CDA /* RapidoMapsTestUITests */,
+			);
+			name = RapidoMapsTestUITests;
+			packageProductDependencies = (
+			);
+			productName = RapidoMapsTestUITests;
+			productReference = 19FAEA9C2D9A7EFA002B4CDA /* RapidoMapsTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19FAEA742D9A7EF6002B4CDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					19FAEA7B2D9A7EF6002B4CDA = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					19FAEA912D9A7EFA002B4CDA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 19FAEA7B2D9A7EF6002B4CDA;
+					};
+					19FAEA9B2D9A7EFA002B4CDA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 19FAEA7B2D9A7EF6002B4CDA;
+					};
+				};
+			};
+			buildConfigurationList = 19FAEA772D9A7EF6002B4CDA /* Build configuration list for PBXProject "RapidoMapsTest" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19FAEA732D9A7EF6002B4CDA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 19FAEA7D2D9A7EF6002B4CDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19FAEA7B2D9A7EF6002B4CDA /* RapidoMapsTest */,
+				19FAEA912D9A7EFA002B4CDA /* RapidoMapsTestTests */,
+				19FAEA9B2D9A7EFA002B4CDA /* RapidoMapsTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19FAEA7A2D9A7EF6002B4CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA902D9A7EFA002B4CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA9A2D9A7EFA002B4CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19FAEA782D9A7EF6002B4CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA8E2D9A7EFA002B4CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19FAEA982D9A7EFA002B4CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19FAEA942D9A7EFA002B4CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19FAEA7B2D9A7EF6002B4CDA /* RapidoMapsTest */;
+			targetProxy = 19FAEA932D9A7EFA002B4CDA /* PBXContainerItemProxy */;
+		};
+		19FAEA9E2D9A7EFA002B4CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19FAEA7B2D9A7EF6002B4CDA /* RapidoMapsTest */;
+			targetProxy = 19FAEA9D2D9A7EFA002B4CDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19FAEAA62D9A7EFA002B4CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RapidoMapsTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19FAEAA72D9A7EFA002B4CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RapidoMapsTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		19FAEAA82D9A7EFA002B4CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19FAEAA92D9A7EFA002B4CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19FAEAAB2D9A7EFA002B4CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RapidoMapsTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RapidoMapsTest";
+			};
+			name = Debug;
+		};
+		19FAEAAC2D9A7EFA002B4CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RapidoMapsTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RapidoMapsTest";
+			};
+			name = Release;
+		};
+		19FAEAAE2D9A7EFA002B4CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RapidoMapsTest;
+			};
+			name = Debug;
+		};
+		19FAEAAF2D9A7EFA002B4CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4H33JVA49;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanket.ray.RapidoMapsTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RapidoMapsTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19FAEA772D9A7EF6002B4CDA /* Build configuration list for PBXProject "RapidoMapsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19FAEAA82D9A7EFA002B4CDA /* Debug */,
+				19FAEAA92D9A7EFA002B4CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19FAEAA52D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19FAEAA62D9A7EFA002B4CDA /* Debug */,
+				19FAEAA72D9A7EFA002B4CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19FAEAAA2D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19FAEAAB2D9A7EFA002B4CDA /* Debug */,
+				19FAEAAC2D9A7EFA002B4CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19FAEAAD2D9A7EFA002B4CDA /* Build configuration list for PBXNativeTarget "RapidoMapsTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19FAEAAE2D9A7EFA002B4CDA /* Debug */,
+				19FAEAAF2D9A7EFA002B4CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19FAEA742D9A7EF6002B4CDA /* Project object */;
+}
