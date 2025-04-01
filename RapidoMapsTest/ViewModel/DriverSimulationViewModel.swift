@@ -123,11 +123,17 @@ final class DriverSimulationViewModel: NSObject {
     }
     
     private func centerMapOnLocation(coordinate: CLLocationCoordinate2D) {
-        mapRegion = MKCoordinateRegion(
-            center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        )
-        delegate?.didUpdateMapRegion(mapRegion)
+        // Only center map if simulation is not running
+        if !isSimulationRunning {
+            let region = MKCoordinateRegion(
+                center: coordinate,
+                span: MKCoordinateSpan(
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.01
+                )
+            )
+            delegate?.didUpdateMapRegion(region)
+        }
     }
     
     deinit {

@@ -61,7 +61,6 @@ private extension RouteModel {
     
     func generateRoutePoints(from route: MKRoute) -> [RoutePoint] {
         let coordinates = route.polyline.coordinates()
-        let totalPoints = coordinates.count
         var routePoints: [RoutePoint] = []
         
         for (index, coordinate) in coordinates.enumerated() {

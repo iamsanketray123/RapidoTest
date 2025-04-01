@@ -33,6 +33,7 @@ final class DriverSimulationViewController: UIViewController {
         textField.placeholder = "Enter destination"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .systemBackground
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -72,7 +73,7 @@ final class DriverSimulationViewController: UIViewController {
 
 private extension DriverSimulationViewController {
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         // Configure Auto Layout for all views
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,39 +83,60 @@ private extension DriverSimulationViewController {
         
         // Map View
         mapView.delegate = self
-        mapView.showsUserLocation = false
-        mapView.isZoomEnabled = true
-        mapView.isRotateEnabled = true
-        view.addSubview(mapView)
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .none
+        mapView.isUserInteractionEnabled = true
+        
+        // Destination Text Field
+        destinationTextField.placeholder = "Enter destination"
+        destinationTextField.borderStyle = .roundedRect
+        destinationTextField.backgroundColor = .secondarySystemBackground
+        destinationTextField.textColor = .label
+        destinationTextField.font = .systemFont(ofSize: 16)
+        destinationTextField.layer.cornerRadius = 8
+        destinationTextField.layer.borderWidth = 1
+        destinationTextField.layer.borderColor = UIColor.systemGray4.cgColor
+        
+        // Search Button
+        searchButton.setTitle("Search", for: .normal)
+        searchButton.backgroundColor = .systemBlue
+        searchButton.setTitleColor(.white, for: .normal)
+        searchButton.layer.cornerRadius = 8
+        searchButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         
         // Start Button
         startButton.setTitle("Start Simulation", for: .normal)
-        startButton.backgroundColor = .systemBlue
+        startButton.backgroundColor = .systemGreen
         startButton.setTitleColor(.white, for: .normal)
-        startButton.layer.cornerRadius = 8
+        startButton.layer.cornerRadius = 25
+        startButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        view.addSubview(startButton)
         
-        // Add destination text field and search button
+        // Add views to hierarchy
+        view.addSubview(mapView)
+        view.addSubview(startButton)
         view.addSubview(destinationTextField)
         view.addSubview(searchButton)
         
-        // Layout
+        // Setup constraints
         NSLayoutConstraint.activate([
+            // Map View
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mapView.bottomAnchor.constraint(equalTo: startButton.topAnchor, constant: -20),
             
+            // Start Button
             startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             startButton.heightAnchor.constraint(equalToConstant: 50),
             
+            // Search Container
             destinationTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             destinationTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             destinationTextField.trailingAnchor.constraint(equalTo: searchButton.leadingAnchor, constant: -10),
-            destinationTextField.heightAnchor.constraint(equalToConstant: 40),
+            destinationTextField.heightAnchor.constraint(equalToConstant: 44),
             
             searchButton.topAnchor.constraint(equalTo: destinationTextField.topAnchor),
             searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -298,10 +320,14 @@ extension DriverSimulationViewController: MKMapViewDelegate {
 // MARK: - ViewModel Delegate
 extension DriverSimulationViewController: DriverSimulationViewModelDelegate {
     func didUpdateCurrentLocation(_ location: CLLocationCoordinate2D) {
-        // Animate car to new position without moving the map
-        if let carAnnotation = carAnnotation {
-            UIView.animate(withDuration: 1.0) {
-                carAnnotation.coordinate = location
+        // Only update car position, not map region
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            if let carAnnotation = self.carAnnotation {
+                UIView.animate(withDuration: 1.0) {
+                    carAnnotation.coordinate = location
+                }
             }
         }
     }
@@ -309,12 +335,16 @@ extension DriverSimulationViewController: DriverSimulationViewModelDelegate {
     func didUpdateMapRegion(_ region: MKCoordinateRegion) {
         // Only update region when initially setting up the route
         if !viewModel.isSimulationRunning {
-            mapView.setRegion(region, animated: true)
+            DispatchQueue.main.async { [weak self] in
+                self?.mapView.setRegion(region, animated: true)
+            }
         }
     }
     
     func didUpdateSimulationStatus(_ isRunning: Bool) {
-        startButton.setTitle(isRunning ? "Stop Simulation" : "Start Simulation", for: .normal)
+        DispatchQueue.main.async { [weak self] in
+            self?.startButton.setTitle(isRunning ? "Stop Simulation" : "Start Simulation", for: .normal)
+        }
     }
 }
 
