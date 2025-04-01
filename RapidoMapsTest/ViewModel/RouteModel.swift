@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 struct RoutePoint {
     let coordinate: CLLocationCoordinate2D
@@ -21,12 +22,34 @@ final class RouteModel: RouteModelProtocol {
         setupLocationManager()
     }
     
-    func generateRoute(to destination: CLLocationCoordinate2D) -> [RoutePoint] {
+    func generateRoute(to destination: CLLocationCoordinate2D, completion: @escaping ([RoutePoint]) -> Void) {
         guard let currentLocation = locationManager.location?.coordinate else {
-            return []
+            completion([])
+            return
         }
         
-        return generateIntermediatePoints(from: currentLocation, to: destination)
+        let sourcePlacemark = MKPlacemark(coordinate: currentLocation)
+        let destinationPlacemark = MKPlacemark(coordinate: destination)
+        
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        
+        let request = MKDirections.Request()
+        request.source = sourceMapItem
+        request.destination = destinationMapItem
+        request.transportType = .automobile
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { [weak self] response, error in
+            guard let self = self,
+                  let route = response?.routes.first else {
+                completion([])
+                return
+            }
+            
+            let points = self.generateRoutePoints(from: route)
+            completion(points)
+        }
     }
 }
 
@@ -36,21 +59,24 @@ private extension RouteModel {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func generateIntermediatePoints(from startCoordinate: CLLocationCoordinate2D,
-                                  to endCoordinate: CLLocationCoordinate2D) -> [RoutePoint] {
-        let totalPoints = 30 // 1 point per second for 30 seconds
-        var route: [RoutePoint] = []
+    func generateRoutePoints(from route: MKRoute) -> [RoutePoint] {
+        let coordinates = route.polyline.coordinates()
+        let totalPoints = coordinates.count
+        var routePoints: [RoutePoint] = []
         
-        for i in 0...totalPoints {
-            let progress = Double(i) / Double(totalPoints)
-            let lat = startCoordinate.latitude + (endCoordinate.latitude - startCoordinate.latitude) * progress
-            let lng = startCoordinate.longitude + (endCoordinate.longitude - startCoordinate.longitude) * progress
-            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-            let timestamp = Double(i)
-            
-            route.append(RoutePoint(coordinate: coordinate, timestamp: timestamp))
+        for (index, coordinate) in coordinates.enumerated() {
+            let timestamp = Double(index)
+            routePoints.append(RoutePoint(coordinate: coordinate, timestamp: timestamp))
         }
         
-        return route
+        return routePoints
+    }
+}
+
+extension MKPolyline {
+    func coordinates() -> [CLLocationCoordinate2D] {
+        var coords = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: pointCount)
+        getCoordinates(&coords, range: NSRange(location: 0, length: pointCount))
+        return coords
     }
 }

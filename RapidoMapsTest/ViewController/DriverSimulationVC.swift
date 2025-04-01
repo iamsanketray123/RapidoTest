@@ -33,7 +33,6 @@ final class DriverSimulationViewController: UIViewController {
         textField.placeholder = "Enter destination"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .systemBackground
-        textField.text = "HSR Sector 1"
         return textField
     }()
     
@@ -139,8 +138,8 @@ private extension DriverSimulationViewController {
     
     func setupMapView() {
         mapView.delegate = self
-        mapView.showsUserLocation = true  // Show blue dot for current location
-        mapView.userTrackingMode = .follow  // Follow user location
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
     
     func drawRoute() {
@@ -189,13 +188,63 @@ private extension DriverSimulationViewController {
         geocoder.geocodeAddressString(destinationText) { [weak self] placemarks, error in
             guard let self = self,
                   let location = placemarks?.first?.location?.coordinate else {
-                // Handle error
                 print("Location not found ❗️❗️❗️")
                 return
             }
             
-            self.viewModel.loadRoute(to: location)
-            self.drawRoute()
+            // Create source and destination placemarks
+            let sourcePlacemark = MKPlacemark(coordinate: self.mapView.userLocation.coordinate)
+            let destinationPlacemark = MKPlacemark(coordinate: location)
+            
+            // Create map items
+            let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+            let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+            
+            // Create directions request
+            let request = MKDirections.Request()
+            request.source = sourceMapItem
+            request.destination = destinationMapItem
+            request.transportType = .automobile
+            
+            // Calculate directions
+            let directions = MKDirections(request: request)
+            directions.calculate { [weak self] response, error in
+                guard let self = self,
+                      let route = response?.routes.first else {
+                    print("Could not calculate route ❗️❗️❗️")
+                    return
+                }
+                
+                // Remove existing overlays
+                self.mapView.removeOverlays(self.mapView.overlays)
+                
+                // Add the new route
+                self.mapView.addOverlay(route.polyline)
+                
+                // Update view model
+                self.viewModel.loadRoute(to: location)
+                
+                // Set region to show entire route
+                let region = MKCoordinateRegion(
+                    center: CLLocationCoordinate2D(
+                        latitude: (self.mapView.userLocation.coordinate.latitude + location.latitude) / 2,
+                        longitude: (self.mapView.userLocation.coordinate.longitude + location.longitude) / 2
+                    ),
+                    span: MKCoordinateSpan(
+                        latitudeDelta: abs(self.mapView.userLocation.coordinate.latitude - location.latitude) * 1.5,
+                        longitudeDelta: abs(self.mapView.userLocation.coordinate.longitude - location.longitude) * 1.5
+                    )
+                )
+                self.mapView.setRegion(region, animated: true)
+                
+                // Add or update car annotation
+                if let carAnnotation = self.carAnnotation {
+                    carAnnotation.coordinate = self.mapView.userLocation.coordinate
+                } else {
+                    self.carAnnotation = CarAnnotation(coordinate: self.mapView.userLocation.coordinate)
+                    self.mapView.addAnnotation(self.carAnnotation!)
+                }
+            }
         }
     }
     
@@ -249,7 +298,7 @@ extension DriverSimulationViewController: MKMapViewDelegate {
 // MARK: - ViewModel Delegate
 extension DriverSimulationViewController: DriverSimulationViewModelDelegate {
     func didUpdateCurrentLocation(_ location: CLLocationCoordinate2D) {
-        // Animate car to new position
+        // Animate car to new position without moving the map
         if let carAnnotation = carAnnotation {
             UIView.animate(withDuration: 1.0) {
                 carAnnotation.coordinate = location
@@ -258,7 +307,10 @@ extension DriverSimulationViewController: DriverSimulationViewModelDelegate {
     }
     
     func didUpdateMapRegion(_ region: MKCoordinateRegion) {
-        mapView.setRegion(region, animated: true)
+        // Only update region when initially setting up the route
+        if !viewModel.isSimulationRunning {
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     func didUpdateSimulationStatus(_ isRunning: Bool) {

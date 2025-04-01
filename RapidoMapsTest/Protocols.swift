@@ -3,7 +3,7 @@ import CoreLocation
 import MapKit
 
 protocol RouteModelProtocol {
-    func generateRoute(to destination: CLLocationCoordinate2D) -> [RoutePoint]
+    func generateRoute(to destination: CLLocationCoordinate2D, completion: @escaping ([RoutePoint]) -> Void)
 }
 
 protocol TimerProviding {

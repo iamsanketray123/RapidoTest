@@ -72,10 +72,14 @@ final class DriverSimulationViewModel: NSObject {
     }
     
     func loadRoute(to destination: CLLocationCoordinate2D) {
-        route = routeModel.generateRoute(to: destination)
-        if let firstPoint = route.first {
-            currentLocation = firstPoint.coordinate
-            centerMapOnLocation(coordinate: firstPoint.coordinate)
+        routeModel.generateRoute(to: destination) { [weak self] routePoints in
+            guard let self = self else { return }
+            
+            self.route = routePoints
+            if let firstPoint = routePoints.first {
+                self.currentLocation = firstPoint.coordinate
+                self.centerMapOnLocation(coordinate: firstPoint.coordinate)
+            }
         }
     }
     
